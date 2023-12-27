@@ -1,0 +1,27 @@
+---
+version: "3.8"
+services:
+  movies:
+    image: vinodvanama/projectmovies:latest
+    ports:
+      - 91:80
+    deploy:
+      replicas: 3
+  train:
+    image: vinodvanama/projectrecharge:latest
+    ports:
+      - 92:80
+    deploy:
+      replicas: 3
+  recharge:
+    image: vinodvanama/projectdth:latest
+    ports:
+      - 93:80
+    deploy:
+      replicas: 3
+  dth:
+    image: vinodvanama/projecttrain:latest
+    ports:
+      - 94:80
+    deploy:
+      replicas: 3
